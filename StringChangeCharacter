@@ -1,0 +1,65 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication128;
+
+//importing scanner class
+import java.util.Scanner;
+
+/**
+ *
+ * @author ashum
+ */
+public class JavaApplication128 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        //creating object of scanner
+        Scanner sc = new Scanner(System.in);
+
+              //Asking for input
+        System.out.print("Enter a string : ");
+        
+        //storing the input in newstring
+        String newString = sc.nextLine(); 
+
+        //creating object of stringbuilder class
+        //stringbuilder allows us to have a mutable string that we can modify later
+        StringBuilder builder = new StringBuilder();
+
+        
+        //converting string to chararray
+        for (char cr : newString.toCharArray()) 
+		{
+                    
+                    //checking if the char is uppercase
+            if (Character.isUpperCase(cr)) 
+			{     
+        //subtracting -2 from thw ascii value and
+        //converting it to char if the character is uppercase
+                builder.append((char)(cr - 2));
+            } 
+            //checking if the char is uppercase
+            else if (Character.isLowerCase(cr)) 
+	    {  
+        //subtracting -2 from thw ascii value and
+        //converting it to char if the character is uppercase
+                builder.append((char)(cr - 3));
+            } 
+            else 
+			{
+                builder.append(cr);
+            }
+        }
+
+        // Display the modified string
+        System.out.println("Output : " +builder);
+    }
+    
+}
